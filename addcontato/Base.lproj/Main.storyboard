@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BMM-qm-8r0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="bhM-xR-ecv">
+            <objects>
+                <navigationController id="BMM-qm-8r0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EcB-Xf-Dz6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HxB-tr-a0L" kind="relationship" relationship="rootViewController" id="irh-We-MFv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oiD-zD-HsQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="27" y="256"/>
+        </scene>
+        <!--New Contact Controller-->
+        <scene sceneID="vAY-fL-gav">
+            <objects>
+                <viewController id="HxB-tr-a0L" customClass="NewContactController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9T0-17-sbQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="G8D-y5-NTy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WhX-18-6OB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sM0-xl-U1w">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uH9-O4-o4w">
+                            <connections>
+                                <action selector="createNewContact:" destination="HxB-tr-a0L" id="Bdw-ID-Rkg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GM3-GU-Rk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="256"/>
+        </scene>
+    </scenes>
+</document>
