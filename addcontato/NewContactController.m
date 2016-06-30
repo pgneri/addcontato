@@ -22,19 +22,23 @@
     
 }
 
-- (CNContactViewController *)addNewContato:(CNContact *)contact{
+- (void)addNewContato:(CNContact *)contact{
     
     CNContactViewController *addContactVC = [CNContactViewController viewControllerForNewContact:contact];
-    addContactVC.delegate                 = self;
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:addContactVC];
+    addContactVC.delegate = self;
+    addContactVC.allowsEditing = YES;
     addContactVC.allowsActions = YES;
     addContactVC.title = @"Novo Contato";
-
-    [self presentViewController:navController animated:TRUE completion:nil];
     
-    [self viewWillDisappear:YES];
-    [addContactVC viewWillAppear:YES];
-    return false;
+    UIBarButtonItem *backBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Voltar" style:UIBarButtonItemStylePlain target:self action:@selector(backAction:)];
+    addContactVC.navigationItem.backBarButtonItem = backBarButton;
+    
+   // Display the view
+    [self.navigationController pushViewController:addContactVC animated:YES];
+}
+
+-(void) backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,5 +67,6 @@
         NSLog(@"Não autorizado");
     }
 }
+
 
 @end
